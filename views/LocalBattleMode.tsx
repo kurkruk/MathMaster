@@ -93,8 +93,11 @@ export const LocalBattleMode: React.FC<LocalBattleModeProps> = ({ onBack }) => {
               {problem.options.map((opt, i) => (
                 <button
                   key={`${problem.id}-${i}`}
-                  className="bg-white border-b-4 border-slate-200 rounded-lg aspect-square text-2xl font-bold text-slate-700 active:bg-brand-50 active:border-brand-200 transition-colors shadow-sm"
-                  onClick={() => handleAnswer(player, opt)}
+                  className="bg-white border-b-4 border-slate-200 rounded-lg aspect-square text-2xl font-bold text-slate-700 active:bg-brand-50 active:border-brand-200 transition-colors shadow-sm touch-none select-none"
+                  onPointerDown={(e) => {
+                    e.preventDefault(); // Prevent browser gestures/ghost clicks
+                    handleAnswer(player, opt);
+                  }}
                 >
                   {opt}
                 </button>

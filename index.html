@@ -28,11 +28,13 @@
       }
     </script>
     <style>
-      /* Disable double-tap zoom on mobile */
-      touch-action: manipulation;
-      body {
+      /* Disable all browser gestures for a native app feel */
+      html, body {
         overscroll-behavior: none;
+        touch-action: none;
         -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        -webkit-user-select: none;
       }
     </style>
 </head>
