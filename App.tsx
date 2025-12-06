@@ -35,7 +35,7 @@ const Menu: React.FC<{ onSelectMode: (mode: GameMode) => void }> = ({ onSelectMo
         <div className="bg-brand-500 p-4 rounded-3xl shadow-xl shadow-brand-200 mb-6 rotate-3 transform transition-transform hover:rotate-6">
           <Calculator className="w-16 h-16 text-white" />
         </div>
-        <h1 className="text-4xl font-black text-slate-800 mb-2 tracking-tight">MathMaster</h1>
+        <h1 className="text-4xl font-black text-slate-800 mb-2 tracking-tight">速算大师</h1>
         <p className="text-slate-500 font-medium mb-10 text-center">极速口算 · 脑力觉醒</p>
 
         <div className="w-full space-y-4">
@@ -64,7 +64,7 @@ const Menu: React.FC<{ onSelectMode: (mode: GameMode) => void }> = ({ onSelectMo
       </div>
       
       <div className="py-4 text-center text-xs text-slate-300">
-        v1.0.0 • By MathMaster Team
+        v1.0.0 • By 速算大师团队
       </div>
     </div>
   );

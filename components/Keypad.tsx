@@ -12,7 +12,13 @@ export const Keypad: React.FC<KeypadProps> = ({ options, onSelect, disabled }) =
       {options.map((opt, idx) => (
         <button
           key={`${opt}-${idx}`}
-          onClick={() => !disabled && onSelect(opt)}
+          onPointerDown={(e) => {
+            // Prevent default browser behavior (zooming, scrolling, ghost clicks)
+            e.preventDefault();
+            if (!disabled) {
+              onSelect(opt);
+            }
+          }}
           disabled={disabled}
           className={`
             aspect-square flex items-center justify-center
@@ -20,6 +26,7 @@ export const Keypad: React.FC<KeypadProps> = ({ options, onSelect, disabled }) =
             bg-white text-slate-800 border-b-4 border-slate-200
             hover:bg-brand-50 hover:border-brand-200
             disabled:opacity-50 disabled:cursor-not-allowed
+            touch-none select-none
           `}
         >
           {opt}
