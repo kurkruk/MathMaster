@@ -95,7 +95,7 @@ export const TrainingMode: React.FC<TrainingModeProps> = ({ onBack }) => {
         contents: prompt,
       });
       
-      setAiFeedback(response.text);
+      setAiFeedback(response.text ?? "暂无分析结果");
     } catch (e) {
       console.error(e);
       setAiFeedback("AI 分析暂时不可用，请稍后再试。");

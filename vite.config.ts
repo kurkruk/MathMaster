@@ -11,5 +11,9 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false
+  },
+  define: {
+    // Inject environment variables safely
+    'process.env.API_KEY': JSON.stringify(process.env.API_KEY || '')
   }
 })
